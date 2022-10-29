@@ -5,7 +5,7 @@ import json
 from flask_cors import CORS
 app = Flask(__name__)
 CORS(app)
-cors = CORS(app, resources={r"/*/": {"origins": ""}})
+cors = CORS(app, resources={r"/*": {"origins": ""}})
 
 cnx = connector.connect(user='root', password='root', host='127.0.0.1', database='exemple')
 cursor = cnx.cursor()
@@ -15,11 +15,11 @@ cursor = cnx.cursor()
 def hello():
     return 'Ainda cria!'
 
-@app.route('/search-measurement')
-def search_measurement():
-    #cursor.execute("SELECT * FROM sinais")
-    #result = cursor.fetchall()
-    sql = 'SELECT * FROM sinais'
+@app.route('/search-measurement-clima')
+def search_measurement_clima():
+    sql = 'SELECT * FROM clima ORDER BY clima_ID desc limit 1'
+    cursor.execute(sql)
+    result = cursor.fetchall()
 
     Data = []
 
@@ -31,7 +31,46 @@ def search_measurement():
     for result in rv:
         Data.append(dict(zip(row_headers, result)))
 
-    result = json.dumps([{'id': 1, 'name': 'teste'}]);
+    #result = json.dumps([{'id': 1, 'name': 'teste'}]);
+    return Data
+
+@app.route('/search-measurement-acelerometro')
+def search_measurement_acelerometro():
+    sql = 'SELECT * FROM Acelerometro ORDER BY Acelerometro_ID desc limit 1'
+    cursor.execute(sql)
+    result = cursor.fetchall()
+
+    Data = []
+
+    cursor.execute(sql)
+    row_headers = [x[0] for x in cursor.description]
+    rv = cursor.fetchall()
+    cnx.commit()
+
+    for result in rv:
+        Data.append(dict(zip(row_headers, result)))
+
+    #result = json.dumps([{'id': 1, 'name': 'teste'}]);
+    return Data
+
+
+@app.route('/search-measurement-gases')
+def search_measurement_gases():
+    sql = 'SELECT * FROM gases ORDER BY Gases_ID desc limit 1'
+    cursor.execute(sql)
+    result = cursor.fetchall()
+
+    Data = []
+
+    cursor.execute(sql)
+    row_headers = [x[0] for x in cursor.description]
+    rv = cursor.fetchall()
+    cnx.commit()
+
+    for result in rv:
+        Data.append(dict(zip(row_headers, result)))
+
+    #result = json.dumps([{'id': 1, 'name': 'teste'}]);
     return Data
 
 if __name__ == '__main__':

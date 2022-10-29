@@ -6,10 +6,73 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="index.js"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <button onClick="teste()"  id="teste">
-        oi
-    </button>
+    <div class="card">
+
+        <h2>Clima</h2>
+        <h3>Dados de medições do clima</h3>
+        <h1 id="temperatura">23°</h1>
+        <div class="sky">
+            <div class="sun"></div>
+            <div class="cloud">
+                <div class="circle-small"></div>
+                <div class="circle-tall"></div>
+                <div class="circle-medium"></div>
+            </div>
+        </div>
+        <table>
+            <tr>
+                <td>Temperatura</td>
+                <td>Pressão</td>
+                <td>Altitude</td>
+                <td>FRI</td>
+                <td>SAT</td>
+            </tr>
+            <tr>
+                <td>30°</td>
+                <td>34°</td>
+                <td>36°</td>
+                <td>34°</td>
+                <td>37°</td>
+            </tr>
+            <tr>
+                <td>17°</td>
+                <td>22°</td>
+                <td>19°</td>
+                <td>23°</td>
+                <td>19°</td>
+            </tr>
+        </table>
+    </div>
+    <div>
+        <h1>Clima</h1>
+        <ul>
+            <li>Altitude: <p id="altitude"></p></li>
+            <li>Temperatura: <p id="temperatura"></p></li>
+            <li>Pressão: <p id="pressao"></p></li>
+            <li>Data: <p id="data_clima"></p></li>
+        </ul>
+        <h1>Acelerometro</h1>
+        <ul>
+            <li>acelX: <p id="acelX"></p></li>
+            <li>acelY: <p id="acelY"></p></li>
+            <li>acelZ: <p id="acelZ"></p></li>
+            <li>GiroX: <p id="giroX"></p></li>
+            <li>GiroY: <p id="giroY"></p></li>
+            <li>GiroZ: <p id="giroZ"></p></li>
+            <li>Data: <p id="data_acelerometro"></p></li>
+        </ul>   
+        <h1>Gases</h1>
+        <ul>
+            <li>CO: <p id="co"></p></li>
+            <li>NH4: <p id="nh4"></p></li>
+            <li>Acetona: <p id="acetona"></p></li>
+            <li>CO2: <p id="co2"></p></li>
+            <li>Data: <p id="data_gases"></p></li>
+        </ul>
+    </div>
+    <script>AtualizaDados()</script>
 </body>
 </html>
