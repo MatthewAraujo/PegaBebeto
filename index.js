@@ -1,15 +1,16 @@
 function BuscaDadosClima() {
     let altitude = document.getElementById('altitude');
     let temperatura = document.getElementById('temperatura');
+    let temperatura1 = document.getElementById('temperatura1');
     let pressao = document.getElementById('pressao');
-    let data = document.getElementById('data');
     result = fazget('http://localhost:5000/search-measurement-clima') 
     result = JSON.parse(result)
     console.log(result)
-    altitude.innerHTML = result[0].Altitude
+    altitude.innerHTML = result[0].Altitude 
     temperatura.innerHTML = result[0].Temperatura +'°'
-    pressao.innerHTML = result[0].Pressao
-    data_clima.innerHTML = result[0].Time_Insert
+    temperatura1.innerHTML = result[0].Temperatura +'°'
+    pressao.innerHTML = result[0].Pressao 
+   
 }
 
 function BuscaDadosAcelerometro() {
@@ -19,7 +20,6 @@ function BuscaDadosAcelerometro() {
     let giroX = document.getElementById('giroX');
     let giroY = document.getElementById('giroY');
     let giroZ = document.getElementById('giroZ');
-    let data_acelerometro = document.getElementById('data_acelerometro');
     result = fazget('http://localhost:5000/search-measurement-acelerometro') 
     result = JSON.parse(result)
     console.log(result)
@@ -29,24 +29,24 @@ function BuscaDadosAcelerometro() {
     giroZ.innerHTML = result[0].giroZ
     giroX.innerHTML = result[0].giroX
     giroY.innerHTML = result[0].giroY
-    data_acelerometro.innerHTML = result[0].Date_insert
+   
 }
+
 function BuscaDadosGases() {
     let co = document.getElementById('co');
     let nh4 = document.getElementById('nh4');
+    let alcohol = document.getElementById('alcohol')
     let acetona = document.getElementById('acetona');
     let CO2 = document.getElementById('co2');
-    let data_gases = document.getElementById('data_gases');
-
     result = fazget('http://localhost:5000/search-measurement-gases') 
     result = JSON.parse(result)
     console.log(result)
     co.innerHTML = result[0].CO
+    alcohol.innerHTML = result[0].Alcohol
     nh4.innerHTML = result[0].NH4
     acetona.innerHTML = result[0].Acetona
     CO2.innerHTML = result[0].CO2
-    data_gases.innerHTML = result[0].Time_Insert
-}
+} 
 
 
 async function AtualizaDados() {
@@ -69,4 +69,3 @@ function fazget(url) {
     console.log(request)
     return request.responseText;
 }
-

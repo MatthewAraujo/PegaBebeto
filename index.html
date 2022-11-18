@@ -9,70 +9,95 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="card">
+    <div class="main">
+        <div class="card">
 
-        <h2>Clima</h2>
-        <h3>Dados de medições do clima</h3>
-        <h1 id="temperatura">23°</h1>
-        <div class="sky">
-            <div class="sun"></div>
-            <div class="cloud">
-                <div class="circle-small"></div>
-                <div class="circle-tall"></div>
-                <div class="circle-medium"></div>
+            <h2>Clima</h2>
+            <h3>Dados de medições do clima</h3>
+            <h1 id="temperatura">23°</h1>
+            <div class="sky">
+                <div class="sun"></div>
+                <div class="cloud">
+                    <div class="circle-small"></div>
+                    <div class="circle-tall"></div>
+                    <div class="circle-medium"></div>
+                </div>
             </div>
+        
+            <table>
+                <tr>
+                    <td>Temperatura</td>
+                </tr>
+                <tr>
+                    <td id="temperatura1"></td>
+                    <td id="altitude"></td>
+                    <td id="pressao"></td>
+                </tr>
+            </table>
         </div>
-        <table>
-            <tr>
-                <td>Temperatura</td>
-                <td>Pressão</td>
-                <td>Altitude</td>
-                <td>FRI</td>
-                <td>SAT</td>
-            </tr>
-            <tr>
-                <td>30°</td>
-                <td>34°</td>
-                <td>36°</td>
-                <td>34°</td>
-                <td>37°</td>
-            </tr>
-            <tr>
-                <td>17°</td>
-                <td>22°</td>
-                <td>19°</td>
-                <td>23°</td>
-                <td>19°</td>
-            </tr>
-        </table>
-    </div>
-    <div>
-        <h1>Clima</h1>
-        <ul>
-            <li>Altitude: <p id="altitude"></p></li>
-            <li>Temperatura: <p id="temperatura"></p></li>
-            <li>Pressão: <p id="pressao"></p></li>
-            <li>Data: <p id="data_clima"></p></li>
-        </ul>
-        <h1>Acelerometro</h1>
-        <ul>
-            <li>acelX: <p id="acelX"></p></li>
-            <li>acelY: <p id="acelY"></p></li>
-            <li>acelZ: <p id="acelZ"></p></li>
-            <li>GiroX: <p id="giroX"></p></li>
-            <li>GiroY: <p id="giroY"></p></li>
-            <li>GiroZ: <p id="giroZ"></p></li>
-            <li>Data: <p id="data_acelerometro"></p></li>
-        </ul>   
-        <h1>Gases</h1>
-        <ul>
-            <li>CO: <p id="co"></p></li>
-            <li>NH4: <p id="nh4"></p></li>
-            <li>Acetona: <p id="acetona"></p></li>
-            <li>CO2: <p id="co2"></p></li>
-            <li>Data: <p id="data_gases"></p></li>
-        </ul>
-    </div>
+        <div class="card">
+
+            <h2>Acelerometro</h2>
+            <h3>Dados de medições do acelerometro</h3>
+            <div class="sky">
+                <div class="sun"></div>
+                <div class="cloud">
+                    <div class="circle-small"></div>
+                    <div class="circle-tall"></div>
+                    <div class="circle-medium"></div>
+                </div>
+            </div>
+        
+            <table>
+                <tr>
+                    <td>AcelX</td>
+                    <td>AcelY</td>
+                    <td>AcelZ</td>
+                    <td>GiroX</td>
+                    <td>GiroY</td>
+                    <td>GiroZ</td>
+                </tr>
+                <tr>
+                    <td id="acelX"></td>
+                    <td id="acelY"></td>
+                    <td id="acelZ"></td>
+                    <td id="giroX"></td>
+                    <td id="giroY"></td>
+                    <td id="giroZ"></td>
+                </tr>
+            </table>
+        </div>
+        <div class="card">
+
+            <h2>Gases</h2>
+            <h3>Dados de medições dos gases</h3>
+            <div class="sky">
+                <div class="sun"></div>
+                <div class="cloud">
+                    <div class="circle-small"></div>
+                    <div class="circle-tall"></div>
+                    <div class="circle-medium"></div>
+                </div>
+            </div>
+        
+            <table>
+                <tr>
+                    <td>CO</td>
+                    <td>Alcohol</td>
+                    <td>NH4</td>
+                    <td>Acetona</td>
+                    <td>Co2</td>
+                </tr>
+                <tr>
+                    <td id="co"></td>
+                    <td id="alcohol"></td>
+                    <td id="nh4"></td>
+                    <td id="acetona"></td>
+                    <td id="co2"></td>
+                </tr>
+            </table>
+        </div>
+    </div>   
     <script>AtualizaDados()</script>
 </body>
 </html>

@@ -91,7 +91,10 @@ span span {
     background-color: #FFEB3B;
     -webkit-animation: up 2s cubic-bezier(.39, 0, .38, 1) .5s;
 }
-
+.main{
+    display: flex;
+    ;
+}
 .cloud {
     position: absolute;
     top: 60px;
